@@ -209,7 +209,7 @@
             } catch (err) {
                 console.error(err);
                 const container = document.getElementById('product-carousel');
-                container.innerHTML = '<p>No se pudieron cargar los productos.</p>';
+                container.innerHTML = '';
             }
         }
 
@@ -336,7 +336,7 @@
                         renderProducts(allProducts);
                     }catch(e){
                         console.error(e);
-                        container.innerHTML = '<p>No se pudieron cargar los productos.</p>';
+                        container.innerHTML = '';
                     }
                 }
 
