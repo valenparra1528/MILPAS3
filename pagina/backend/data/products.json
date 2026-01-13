@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "name": "NARANJAS",
+    "discount": 10,
+    "image": "IMG1.jfif",
+    "category": "frutas"
+  },
+  {
+    "id": 2,
+    "name": "LECHE",
+    "image": "lacteos.jpg",
+    "discount": 5,
+    "category": "lacteos"
+   
+  },
+  {
+    "id": 3,
+    "name": "LOMO DE CERDO",
+    "image": "carnes.jpg",
+    "discount": 10,
+    "category": "carnes",
+    "weeklyOffer": true
+  }
+]

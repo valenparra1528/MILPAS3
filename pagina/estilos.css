@@ -1,0 +1,655 @@
+body {
+    font-family: 'Libre Baskerville', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+} 
+
+:root{
+    --footer-height: 50px; /* altura usada por el footer y espacio reservado (reducida) */
+}
+
+/* Smooth scroll for anchor links */
+html { scroll-behavior: smooth; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.main-header {
+    background-color: #f38405;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Barra superior de contacto eliminada - reglas removidas */
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: transparent;
+    font-size: 0.8em;
+    /* Cambio: forzar a apilar los elementos superiores si el ancho es pequeño */
+    flex-wrap: wrap; 
+}
+
+
+.contact-top { 
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Ocultar elementos de contacto superiores en móvil para simplificar el header */
+@media (max-width: 600px) {
+    .contact-top { display: none; }
+}
+
+
+.contact-inline { 
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.95em;
+    color: #333;
+}
+.contact-link { color: inherit; display:inline-flex; gap:8px; align-items:center; }
+.contact-link:hover { text-decoration: underline; color: #d86700; }
+
+
+.contact-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin: 12px 20px 18px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    display: none; /* hidden by default; shown when user clicks the respective nav link */
+}
+
+.contact-section h3 { margin-top: 0; color: #f38405; }
+.contact-section a { color: #f38405; font-weight: 700; }
+
+/* Estilos para la sección 'Quiénes somos' */
+.about-image{
+    display: block;
+    max-width: 720px;
+    width: 100%;
+    height: auto;
+    margin: 12px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+.about-text{
+    max-width: 900px;
+    margin: 8px auto;
+    color: #333;
+    line-height:1.6;
+    column-count: 2;
+    column-gap: 36px;
+    text-align: justify;
+}
+.about-text p{ break-inside: avoid-column; margin: 0 0 1em; }
+.about-text h4{ color: #f38405; margin-top: 12px; column-span: all; }
+
+@media (max-width: 900px) {
+    .about-text { column-count: 1; column-gap: 20px; }
+}
+
+
+@media (min-width: 0px) {
+    #contacto { scroll-margin-top: 90px; }
+}
+.contact-inline strong { color: #f38405; margin-right: 6px; }
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0; /* reducido para disminuir altura del header */
+    /* Cambio: permitir apilamiento en móvil */
+    flex-wrap: wrap; 
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-left: 10px; /* separa 10px del borde izquierdo en pantallas grandes */
+}
+.logo img{  width: 120px; height: 100px;; display:block; }
+
+@media (min-width: 900px) {
+    /* Reducir 5px la distancia horizontal entre logo y barra en escritorio */
+    .logo { margin-right: -5px; }
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 0;
+    margin: 0 auto; /* centra horizontalmente dentro del header */
+    max-width: 430px; /* reducido para acortar un poco la barra */
+    width: min(430px, 55%);
+    background: #fff;
+    padding: 6px 8px; /* ligero aumento para balance visual */
+    border-radius: 4px; /* forma más rectangular */
+    align-items: left;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* sombra más sutil */
+}
+
+/* Cambio: Ocultar la barra de búsqueda en móvil para ahorrar espacio */
+@media (max-width: 600px) {
+    /* En móvil, la barra ocupa la mayor parte del ancho y sigue siendo rectangular */
+    .search-bar { display: flex; margin: 8px auto; max-width: calc(100% - 40px); width: auto; }
+    /* Asegura que el header se organice correctamente */
+    .header-main { justify-content: space-between; gap: 10px; align-items: center; }
+
+    /* Separación izquierda del logo en móviles */
+    .logo {
+        justify-content: flex-start; /* alinear a la izquierda */
+        padding-left: 25px; /* separación desde la margen izquierda */
+    }
+    .logo img { display:block; margin:0 auto; }
+}
+
+/* Forzar en móvil: logo encima de la navegación y barra estirada */
+@media (max-width: 433px) {
+    .header-main { display:flex; flex-direction:column; align-items:stretch; position:relative; }
+    .logo { order:1; width: 240px; display:flex; justify-content:center; margin-bottom:10px; position:relative; z-index: 4000; }
+    .logo img { display:block; margin:0 auto; max-width: 100%; height: auto; }
+    .search-bar { order:2; width: calc(100% - 30px); margin: 0 15px; padding:8px 8px; box-sizing:border-box; background:#fff; }
+    .main-nav {
+        margin-top: 8px;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        height: 44px; /* barra compacta en móvil */
+        padding: 0;
+        background-color: #0b63b8;
+        box-shadow: none;
+    }
+
+    .nav-toggle {
+        margin-left: 12px;
+        color: #000; /* icono visible en la barra azul */
+        background: transparent;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+    /* Cuando se abre, mostrar menú desplegable debajo de la barra */
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0b63b8;
+        z-index: 2000;
+    }
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 6px 8px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.search-bar button {
+    background-color: #ffd23b; /* yellow search button like mockup */
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 4px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+
+/* admin button removed */
+
+.home-button button, #home-btn {
+    background: #f38405;
+    color: #fff;
+    border: none;
+    padding: 4px 8px; 
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.8em; 
+}
+
+/* admin panel styles removed */
+
+
+.cart-count { display: none; }
+
+/* Navegación */
+.main-nav {
+    background-color: #0b63b8;
+    border-bottom: none;
+    padding: 6px 0;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.06);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center;
+    gap: 18px;
+}
+
+
+.nav-toggle {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+    .nav-toggle { display: inline-block; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; gap: 8px; padding: 10px; }
+}
+
+@media (max-width: 433px) {
+    .header-main { padding: 6px 0; }
+    .logo img{ max-height:240px; }
+}
+
+/* Panel lateral de categorías */
+.side-panel {
+    position: fixed;
+    left: -340px; 
+    top: 0;
+    height: 100%;
+    width: 280px; 
+    max-width: 90%;
+    background: #f38405;
+    box-shadow: 2px 0 18px rgba(0,0,0,0.12);
+    z-index: 2200;
+    transition: left 260ms ease;
+    display: flex;
+    flex-direction: column;
+}
+.side-panel.open { left: 0; }
+.side-header { display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid #eee; }
+.side-close { margin-left:auto; background:transparent; border:none; font-size:1.2rem; cursor:pointer; }
+.side-nav { padding: 12px; display:flex; flex-direction:column; gap:8px; }
+.side-nav a, .side-nav button { display:block; padding:10px 12px; border-radius:6px; text-align:left; background:transparent; border:none; color:#333; cursor:pointer; font-weight:600; }
+.side-nav a:hover, .side-nav button:hover { background: #f7f7f7; }
+
+/* overlay para cerrar al hacer click fuera */
+.side-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 2100; display:none; }
+.side-overlay.open { display:block; }
+
+.nav-links li a {
+    font-weight: 700;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+.nav-links li a:hover{ background: rgba(255,255,255,0.06); }
+.nav-links li a.active{ background: rgba(255,255,255,0.12); }
+
+/* Products submenu styles */
+.products-parent { position: relative; }
+.products-submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #0b63b8;
+    color: #222;
+    min-width: 220px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    padding: 8px 6px;
+    z-index: 3000;
+}
+.products-submenu.open,
+.products-parent:hover .products-submenu { display: block; }
+.products-submenu li { list-style: none; }
+.products-submenu li a { display: block; padding: 8px 12px; color: #222; border-radius:4px; }
+.products-submenu li a:hover { background: #f2f2f2; }
+
+/* Mobile behavior: show submenu inside collapsed nav */
+@media (max-width: 800px) {
+    .products-submenu { position: static; box-shadow: none; padding-left: 0; }
+    .products-submenu.open { display: flex; flex-direction: column; gap:6px; }
+}
+
+
+.nav-links li a.active {
+    color: #f38405;
+    text-decoration: underline;
+}
+
+
+.main-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero styles */
+.hero-wrapper{ width: 100%; padding: 0; }
+.hero{
+    width: 100%; /* full width */
+    min-height: 360px; /* fallback; JS will set exact height between nav and footer */
+    background-image: url('hero1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0; /* flush with edges */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+}
+.hero:before{ content:''; position:absolute; inset:0; background: linear-gradient(90deg, rgba(243,132,5,0.85), rgba(0,0,0,0.1)); mix-blend-mode: multiply; }
+.hero-inner{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding: 40px 60px;
+    color:#fff;
+    text-align:center;
+    /* Sombra de texto aplicada a todos los elementos del hero */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+/* Ajustes concretos para elementos del hero para mejorar legibilidad */
+.hero-inner h1, .hero-inner p, .hero-inner .cta{ text-shadow: 0 2px 6px rgba(0,0,0,0.65); }
+.hero-inner .cta{ /* pequeño realce para el botón */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.hero-inner h1{ font-size:48px; line-height:1; margin:0 0 8px; font-weight:700; letter-spacing:0.5px; }
+.hero-inner p{ margin:0 0 16px; font-size:18px; opacity:0.95; }
+.hero-inner .cta{ background:#0b63b8; color:#fff; padding:10px 18px; border-radius:6px; font-weight:700; text-decoration:none; }
+
+@media (max-width: 900px){
+    /* On mobile provide a smaller minimum hero height while script adapts */
+    .hero{ min-height: 260px; }
+    .hero-inner{ padding: 20px; }
+    .hero-inner h1{ font-size:26px; }
+}
+
+/* --- Nuevas Especificaciones en Mobile View --- */
+@media (max-width: 600px) {
+  /* Sobrescribe el ancho del contenedor (aplicado a .main-content) */
+    .main-content {
+        width: 100%; /* Ocupa todo el ancho */
+        max-width: none; /* Asegura que la restricción de 1200px no aplique */
+        padding: 0; /* Sin espacios laterales */
+        margin: 0; /* Sin márgenes laterales */
+    }
+
+  /* Hace la fuente h1 más pequeña para móviles */
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+/* ------------------------------------------- */
+
+/* Secciones de Productos */
+.weeklyOffer, .featured-products {
+    margin-bottom: 40px;
+    margin-left: 0; 
+    padding: 0 5%; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.producto h3 {
+    margin: 6px 10px 4px;
+    font-size: 1rem;
+}
+.producto p {
+    margin: 0;
+    padding: 0 10px 6px 10px;
+    line-height: 1.2;
+    display: block;
+}
+
+/* Oculta el elemento de precio si está vacío para eliminar el espacio visual */
+.producto p:empty { display: none; }
+img{
+    max-width: 100%;
+}
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; 
+    padding-bottom: 7px;
+    margin: 0;
+    /* Separación de 10px respecto a los bordes del contenedor */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+.producto {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 140px; 
+    flex: 0 0 auto; 
+}
+
+.producto img {
+    width: 100%;
+    height: 120px; 
+    object-fit: cover;
+    border-radius: 10px  10px 0 0;
+    transition: all  .5s;
+}
+
+.producto:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    overflow: hidden;
+}
+
+    .producto:hover img {
+        transform: scale(1.1); 
+        transition: all  .5s;
+        overflow: hidden;
+    }
+.discount-badge {
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 3px 6px; 
+    border-radius: 4px;
+    font-size: 0.7em; 
+    z-index: 20;
+}
+
+.btn-secondary {
+    background-color: #152becbf;
+    color: #fff;
+    padding: 6px 10px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+/* Media query para productos: ¡Una sola columna en móviles! */
+@media (max-width: 600px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.section-column {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+/* Resaltado temporal al hacer click desde el banner secundario */
+.section-column.highlight {
+    box-shadow: 0 8px 20px rgba(243,132,5,0.18);
+    transform: translateY(-4px);
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    outline: 2px solid rgba(243,132,5,0.12);
+}
+.service-block{
+    margin-left: 0; 
+}
+
+.metodos{
+    margin-left: 0; 
+}
+
+
+/* Mobile: aumentar logo en pantallas pequeñas */
+@media (max-width: 600px) {
+    .logo img { max-height: 160px; width: auto; height: auto; }
+}
+@media (max-width: 433px) {
+    .logo { width: 310px; }
+    .logo img { max-height: 170px; width: auto; height: auto; }
+}
+
+/* Footer */
+.main-footer {
+    background-color: #0b63b8;
+    color: #fff;
+    padding: 5px 5%;
+    text-align: center;
+    height: var(--footer-height); 
+    position: static; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 320ms ease, opacity 320ms ease;
+}
+
+/* Hidden state for slide-out (slide down) */
+.main-footer.footer-hidden{
+    /* Mantener visible aunque tenga la clase "footer-hidden" */
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Slightly translucent variant */
+.main-footer.footer-semi{ background-color: rgba(21,39,236,0.66); }
+
+.main-footer .footer-links, .main-footer .footer-social {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 0;
+}
+
+/* Estilos para los iconos sociales (reutilizables) */
+.social-link{
+    color: #0b63b8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background: transparent;
+    transition: background 160ms ease, color 160ms ease;
+}
+.social-link svg{ width:35px; height:35px; }
+.social-link:hover{ background: rgba(255,255,255,0.08); color:#0b63b8; }
+
+/* Color específico para WhatsApp — ahora coincide con Facebook/Instagram */
+.social-link.whatsapp{ color: #f38405; }
+.social-link.whatsapp:hover{ background: rgba(11,99,184,0.12); color: #0b63b8; }
+
+.contact-social .social-icons{ display:flex; gap:10px; align-items:center; font-size:0; line-height:0; }
+.contact-social .social-icons svg{ display:block; }
+
+/* Desactivar pseudo-elementos y decoraciones que puedan mostrar cruces alrededor de los iconos */
+.contact-social .social-icons::before,
+.contact-social .social-icons::after,
+.social-link::before,
+.social-link::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Asegurar que no haya imágenes de fondo ni sombras decorativas en los iconos */
+.social-link, .contact-social .social-icons {
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* Copyright text in footer */
+.main-footer .footer-copy{
+    color: #fff;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    margin-left: 12px;
+}
+@media (max-width: 600px){
+    .main-footer .footer-copy{ font-size: 17px; }
+}
+
+/* Ensure page content is not hidden behind the fixed footer */
+/* Default: no bottom padding necessary when footer is not fixed */
+main > .main-content { padding-bottom: 0; }
+
+/* Option: make footer fixed on small screens */
+@media (max-width: 900px) {
+    .main-footer {
+        /* Mantener footer estático en móvil para que no cubra contenido */
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        height: var(--footer-height);
+    }
+    main > .main-content { padding-bottom: 0; }
+}
+
+
+
