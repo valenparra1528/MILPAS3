@@ -1,0 +1,23 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "description": "El backend fue movido a la carpeta `backend/` para separar frontend y backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valenparra1528/pagina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valenparra1528/pagina/issues"
+  },
+  "homepage": "https://github.com/valenparra1528/pagina#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

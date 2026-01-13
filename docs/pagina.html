@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Instrument+Serif&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mi Página</title>
+   
+    <link rel="stylesheet" href="estilos.css"> 
+</head>
+<body>
+
+   
+    
+    <header class="main-header">
+        <div class="header-main">
+            <div class="logo">
+                <a href="#"><img src="logo3.png" width="200" height="150" alt="Logo"></a>
+            </div>
+           
+            <div class="search-bar">
+                <input type="text" placeholder="Busca productos">
+                <button type="submit">🔍</button>
+            </div>
+           
+    </header>
+
+    <nav class="main-nav">
+        <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#" data-category="Home">INICIO</a></li>
+            <li><a href="#about" data-category="About">QUIENES SOMOS</a></li>
+            <li class="products-parent">
+                <a href="#" id="products-link">NUESTROS PRODUCTOS ▾</a>
+                <ul class="products-submenu" aria-hidden="true">
+                    <li><a href="#" data-category="Lácteos">LACTEOS</a></li>
+                    <li><a href="#" data-category="Frutas">FRUTAS Y VERDURAS</a></li>
+                    <li><a href="#" data-category="Carnes">CARNES</a></li>
+                    <li><a href="#" data-category="Aseo">ASEO</a></li>
+                    <li><a href="#" data-category="Hogar">HOGAR</a></li>
+                    <li><a href="#" data-category="Despensa">DESPENSA</a></li>
+                </ul>
+            </li>
+            <li><a href="#contacto" data-category="Contact">CONTACTANOS</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero-wrapper">
+        <section class="hero">
+                                            <picture>
+                    <source type="image/webp" srcset="fondo-480.webp 480w, fondo-768.webp 768w, fondo-1024.webp 1024w, fondo-1440.webp 1440w, fondo-1920.webp 1920w" sizes="100vw">
+                    <img class="hero-img" src="hero1.png" srcset="fondo-480.jfif 480w, fondo-768.jfif 768w, fondo-1024.jfif 1024w, fondo-1440.jfif 1440w, fondo-1920.jfif 1920w" sizes="100vw" alt="" aria-hidden="true" loading="eager" decoding="async">
+                </picture>
+            <div class="hero-inner">
+                <h1>VEGETALES<br>SIEMPRE FRESCOS</h1>
+                <p>TENEMOS EL MEJOR SURTIDO DE VEGETALES FRESCOS PARA USTED</p>
+                <a class="cta" href="#">COMPRA AHORA!</a>
+            </div>
+        </section>
+    </section>
+
+  
+    <aside id="side-panel" class="side-panel" aria-hidden="true">
+        <div class="side-header">
+            <button id="side-close" class="side-close" aria-label="Cerrar">✕</button>
+            <h3>Categorías</h3>
+        </div>
+        <nav id="side-nav" class="side-nav" aria-label="Navegación de categorías">
+           
+        </nav>
+    </aside>
+    <div id="side-overlay" class="side-overlay" aria-hidden="true"></div>
+
+    <main>
+      
+        
+
+       
+        
+
+       
+        <h2 id="category-title" style="display:none; text-align:center; margin-top:18px;"> </h2>
+
+        <div class="product-carousel" id="product-carousel">
+            
+        </div>
+
+        
+        <section id="about" class="contact-section" style="margin:20px;">
+            
+            <img src="historia.png" alt="Historia Supermercado Las Cuatro Milpas" class="about-image">
+            <div class="about-text">
+                <p>El Supermercado Las Cuatro Milpas, tiene sus orígenes a mediados de noviembre de 1969, cuando el señor Edilberto Pineda y Otoniel Valencia Londoño deciden establecer una tienda pequeña en el municipio de Chinchiná. Así, los nuevos empresarios realizaron un negocio con el señor Efraín Mejía, propietario del local en el cual funcionaba una cantina llamada Las Cuatro Milpas, ubicada cerca de la estación de bomberos y de la zona de tolerancia del municipio, sector muy comercial en esa época; allí decidieron instalarse.</p>
+
+                <p>Con el fin de iniciar labores comerciales don Otoniel invita a su hijo Samuel Valencia para que trabaje con él. El negocio basaba su oferta en petróleo, carbón y abarrotes en general, muy demandados en ese tiempo por la comunidad, pero debido al cambio de actividad (de cantina a tienda) el negocio no ofreció los resultados esperados; por ello don Edilberto Pineda decidió retirarse y propuso a don Samuel que trabajara con él. Don Samuel aceptó la propuesta, aunque aclaró que sólo lo haría hasta que su padre don Otoniel encontrara dónde ubicarse.</p>
+
+                <p>Pasados algunos años, cuando el negocio ya funcionaba mejor, comenzaron a tener problemas por falta de espacio para bodega y por incrementos en el arriendo del local, lo que motivó la compra de una casa en proceso de sucesión en 1976. Después de adquirir el predio, establecieron la tienda allí por dos años, conservando el nombre original y realizando actividades comerciales al detal (menudeo). Debido a la estrechez de la casa y al crecimiento del negocio, que obligaba a utilizar habitaciones como bodega, decidieron trasladarse a la Cra 6 Nº 7-07, a un local más amplio que les permitió construir bodegas con mayor capacidad de almacenamiento.</p>
+
+                <p>Cinco años más tarde se adquirió un predio junto al local y se anexó al negocio, buscando aumentar el comercio al mayoreo combinándolo con el menudeo, hasta lograr una mezcla surtiendo tiendas y vendiendo mercados para finca y hogares. Esto obligó una reestructuración para independizar las dos funciones: don Otoniel con doña Rosa Valencia se encargaron del menudeo y don Samuel del mayoreo.</p>
+
+                <p>Por ese tiempo doña Rosa se casó con el señor Bernardo Castro, quien ingresó a hacer parte del negocio al menudeo. Don Samuel tenía la idea de montar un supermercado y, tras meditarlo, decidió comprar un lote y construir un local, al cual se le adecuaron góndolas de metal para iniciar el supermercado. En 1985 construyó el SUPERMERCADO LAS CUATRO MILPAS, trasladando parte de la venta al menudeo que tenía en el Granero. Se conformó así una sociedad de hecho entre los fundadores: don Otoniel Valencia, don Samuel Valencia, doña Rosa Valencia y don Bernardo Castro.</p>
+
+                <p>Don Samuel se retiró por un tiempo para dedicarse a otros negocios, pero con la muerte de don Otoniel regresó y quedó como socio junto a doña Rosa y don Bernardo. En 1988 se realizó una negociación con la señora Luz Marina Duque para encargarse de la parte del menudeo con los otros socios, permitiendo que don Samuel se dedicara al mayoreo; esa sociedad terminó dos años después, y don Samuel reasumió ambas funciones.</p>
+
+                <p>Doña Luz Marina propuso abrir un supermercado en Armenia, formándose una sociedad entre don Samuel, doña Luz Marina y el Supermercado Las Cuatro Milpas N°1 de Chinchiná, autorizándose el uso de la misma razón social. En 1994 se compró un local en Armenia y allí se cambió la ubicación del supermercado.</p>
+
+                <p>En 1995 se inició un proceso de reestructuración: el granero (mayoreo) dejó de vender mercados (menudeo) y trasladó esa función al supermercado; en el mismo año se inició la sistematización (software) de operaciones con el fin de mejorar el flujo de información administrativa. Para el año 2000 se decidió fusionar todos los negocios bajo un mismo NIT y se creó un proceso de auditoría interna, cambios que afectaron la contabilidad y generaron controles que incidieron en la cultura organizacional, provocando la independencia del supermercado de Armenia, que quedó a cargo de doña Luz Marina Duque.</p>
+
+                <p>Tiempo después, don Bernardo Castro decidió emprender su propio negocio y se retiró, quedando en agosto de 2004 solo dos socios en el Supermercado Las Cuatro Milpas N°1: doña Rosa y don Samuel Valencia. Pasados unos meses doña Rosa se retiró para acompañar a su esposo en la construcción de su nuevo negocio; en ese año don Samuel constituyó la empresa CUATRO MILPAS S.A., incorporando a su esposa e hijas, quienes continuaron con el reto de hacer de la empresa una organización próspera y humana, contribuyendo al desarrollo del municipio y ofreciendo a sus clientes los mejores productos y precios.</p>
+
+                
+            </div>
+        </section>
+
+        
+        <section id="contacto" class="contact-section" style="margin:20px;">
+            <h3>Contáctanos</h3>
+            <p>Teléfono: +57 606 8404850</p>
+            <p>Email: asistentecuatromilpas@gmail.com</p>
+            
+            <p>Dirección: Carrera 6 #7-07, Chinchiná, Caldas, Colombia</p>
+
+            <div class="contact-social" style="margin-top:12px;">
+                <h4 style="margin:0 0 8px; color:#f38405;">Nuestras redes</h4>
+                <div class="social-icons" style="display:flex; gap:10px; align-items:center;">
+                    <a href="https://www.facebook.com/supermercadocuatromilpas?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Supermercado Las Cuatro Milpas" class="social-link">
+                        
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H8.07v-2.9h2.37V9.41c0-2.35 1.4-3.64 3.53-3.64 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.76h2.59l-.41 2.9h-2.18v7.03C18.34 21.2 22 17.06 22 12.07z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/supermercadoscuatromilpas/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Supermercado Las Cuatro Milpas" class="social-link">
+                        
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                        </svg>
+                    </a>
++                    <a href="https://whatsapp.com/channel/0029VbB56bS3WHTUrzfdi92K" target="_blank" rel="noopener noreferrer" aria-label="Comunidad de WhatsApp — Supermercado Las Cuatro Milpas" class="social-link whatsapp">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
++                          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.24-.59-.48-.51-.66-.51-.17 0-.37-.02-.57-.02-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.43s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
++                        </svg>
++                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="metodos" class="contact-section" style="margin:20px; display:none;">
+            <h3>Medios de pago</h3>
+            <p>Aceptamos: Efectivo, tarjetas débito/crédito, transferencias y pago móvil.</p>
+            <p>Próximamente agregaremos más detalles sobre cuotas y promociones.</p>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <div></div>
+        </div>
+        <div class="footer-copy" id="footer-copy" aria-live="polite"></div>
+    </footer>
+
+       
+        
+
+    <script>
+        async function loadProducts() {
+            try {
+                const res = await fetch('/api/products');
+                if (!res.ok) throw new Error('Error al obtener productos');
+                const products = await res.json();
+                const container = document.getElementById('product-carousel');
+                container.innerHTML = '';
+                
+                const isHome = (window.isHomeMode === undefined) ? true : !!window.isHomeMode;
+                const toRender = isHome ? products.filter(p => !p.discount || Number(p.discount) <= 0) : products;
+                toRender.forEach(p => {
+                    const div = document.createElement('div');
+                    div.className = 'producto';
+
+                    const img = document.createElement('img');
+                    img.src = p.image;
+                    img.alt = p.name;
+                    img.width = 50;
+                    img.height = 50;
+
+                    const badge = document.createElement('div');
+                    badge.className = 'discount-badge';
+                    if (p.discount) badge.textContent = `-${p.discount}%`;
+                    else if (p.weeklyOffer) badge.textContent = 'Oferta semanal';
+                    else badge.textContent = '';
+
+                    const h3 = document.createElement('h3');
+                    h3.textContent = String(p.name).replace(/\s*&\s*/g, ' y ');
+
+                    div.appendChild(img);
+                    if (p.discount) div.appendChild(badge);
+                    div.appendChild(h3);
+
+                        container.appendChild(div);
+                });
+            } catch (err) {
+                console.error(err);
+                const container = document.getElementById('product-carousel');
+                container.innerHTML = '<p>No se pudieron cargar los productos.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+    <script>
+        (function(){
+            const prodLink = document.getElementById('products-link');
+            const prodSub = document.querySelector('.products-submenu');
+            if (!prodLink || !prodSub) return;
+
+            prodLink.addEventListener('click', (e)=>{
+                e.preventDefault();
+                const open = prodSub.classList.toggle('open');
+                prodSub.setAttribute('aria-hidden', String(!open));
+            });
+
+            document.addEventListener('click', (ev)=>{
+                if (!prodSub.contains(ev.target) && ev.target !== prodLink) {
+                    prodSub.classList.remove('open');
+                    prodSub.setAttribute('aria-hidden','true');
+                }
+            });
+
+            const subLinks = prodSub.querySelectorAll('a[data-category]');
+            subLinks.forEach(s=>{
+                s.addEventListener('click', ()=>{
+                    prodSub.classList.remove('open'); prodSub.setAttribute('aria-hidden','true');
+                    const navLinks = document.getElementById('nav-links');
+                    if (navLinks && navLinks.classList.contains('open')) navLinks.classList.remove('open');
+                });
+            });
+        })();
+    </script>
+
+    
+    <script>
+        (function(){
+            const footer = document.querySelector('.main-footer');
+            if (!footer) return;
+            let lastY = window.pageYOffset || 0;
+            let rafScheduled = false;
+
+            function onScroll(){
+                if (rafScheduled) return;
+                rafScheduled = true;
+                window.requestAnimationFrame(()=>{
+                    const y = window.pageYOffset || 0;
+                    if (y > lastY + 10) {
+                        footer.classList.add('footer-hidden');
+                    } else if (y < lastY - 10) {
+                        footer.classList.remove('footer-hidden');
+                    }
+                    lastY = y;
+                    rafScheduled = false;
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+    </script>
+
+        <script>
+
+            (function(){
+                    const container = document.getElementById('product-carousel');
+                    const nav = document.getElementById('nav-links');
+                    let allProducts = [];
+
+                    function showProducts(){
+                        if (container) container.style.display = '';
+                        const titleEl = document.getElementById('category-title');
+                        if (titleEl && titleEl.textContent && titleEl.textContent.trim()) titleEl.style.display = '';
+                    }
+                    function hideProducts(){
+                        if (container) container.style.display = 'none';
+                        const titleEl = document.getElementById('category-title');
+                        if (titleEl) titleEl.style.display = 'none';
+                    }
+               
+                function renderProducts(products){
+                   
+                    const isHome = (window.isHomeMode === undefined) ? true : !!window.isHomeMode;
+                    const list = isHome ? (products || []).filter(p => !p.discount || Number(p.discount) <= 0) : (products || []);
+                    container.innerHTML = '';
+                    if (!list || list.length === 0) {
+                        
+                        container.innerHTML = '';
+                        return;
+                    }
+                    list.forEach(p => {
+                        const div = document.createElement('div');
+                        div.className = 'producto';
+
+                        const img = document.createElement('img');
+                        img.src = p.image || '';
+                        img.alt = p.name || '';
+                        img.width = 50;
+                        img.height = 50;
+
+                        const badge = document.createElement('div');
+                        badge.className = 'discount-badge';
+                        if (p.discount) badge.textContent = `-${p.discount}%`;
+                        else if (p.weeklyOffer) badge.textContent = 'Oferta semanal';
+                        else badge.textContent = '';
+
+                        const h3 = document.createElement('h3');
+                        h3.textContent = String(p.name).replace(/\s*&\s*/g, ' y ');
+
+                        div.appendChild(img);
+                        if (p.discount) div.appendChild(badge);
+                        div.appendChild(h3);
+
+                        container.appendChild(div);
+                    });
+                }
+
+                
+                async function fetchAllProducts(){
+                    try{
+                        const res = await fetch('/api/products');
+                        if (!res.ok) throw new Error('Error al obtener productos');
+                        allProducts = await res.json();
+                        renderProducts(allProducts);
+                    }catch(e){
+                        console.error(e);
+                        container.innerHTML = '<p>No se pudieron cargar los productos.</p>';
+                    }
+                }
+
+                function showCategory(cat){
+                  
+                    if (!cat || cat === 'All') { renderProducts(allProducts); return; }
+                    if (cat === 'Ofertas'){
+                       
+                        const filtered = allProducts.filter(p => p.weeklyOffer === true);
+                        renderProducts(filtered);
+                        return;
+                    }
+                    const filtered = allProducts.filter(p => String(p.category).toLowerCase() === String(cat).toLowerCase());
+                    renderProducts(filtered);
+                }
+
+                
+                function initNavFilters(){
+                    if (!nav) return;
+                    const links = Array.from(nav.querySelectorAll('a[data-category]'));
+                    
+                    function toggleFeaturedColumns(show){
+                        const cols = document.querySelectorAll('.featured-products .section-column');
+                        cols.forEach(c => {
+                            c.style.display = show ? '' : 'none';
+                        });
+                    }
+
+                        
+                        
+                        function hideInfoSections(){
+                            const aboutEl = document.getElementById('about');
+                            const contactEl = document.getElementById('contacto');
+                            const metodosEl = document.getElementById('metodos');
+                            if (aboutEl) aboutEl.style.display = 'none';
+                            if (contactEl) contactEl.style.display = 'none';
+                            if (metodosEl) metodosEl.style.display = 'none';
+                        }
+                        function showOnlySection(id){
+                            hideInfoSections();
+                            const el = document.getElementById(id);
+                            if (el) { el.style.display = 'block'; el.scrollIntoView({behavior:'smooth'}); }
+                        }
+
+                        // Helper to show/hide hero and keep footer location stable
+                        function toggleHero(show){
+                            const heroEl = document.querySelector('.hero');
+                            const mainEl = document.querySelector('main');
+                            const headerEl = document.querySelector('.main-header');
+                            const navEl = document.querySelector('.main-nav');
+                            const footerEl = document.querySelector('.main-footer');
+                            if (!heroEl || !mainEl) return;
+                            if (show) {
+                                heroEl.style.display = '';
+                                mainEl.style.minHeight = '';
+                            } else {
+                                heroEl.style.display = 'none';
+                                const headerH = headerEl ? headerEl.getBoundingClientRect().height : 0;
+                                const navH = navEl ? navEl.getBoundingClientRect().height : 0;
+                                const footerH = footerEl ? footerEl.getBoundingClientRect().height : 0;
+                                const space = Math.max(220, window.innerHeight - headerH - navH - footerH);
+                                mainEl.style.minHeight = space + 'px';
+                            }
+                        }
+
+                    
+                    function setHomeMode(show){
+                        window.isHomeMode = !!show;
+                        const cols = document.querySelectorAll('.featured-products .section-column');
+                        cols.forEach(c => c.style.display = show ? '' : 'none');
+                    }
+
+                    links.forEach(a => {
+                        a.addEventListener('click', (e)=>{
+                            e.preventDefault();
+                            const cat = a.dataset.category;
+
+                            links.forEach(x=>x.classList.remove('active'));
+                            a.classList.add('active');
+
+                            const titleEl = document.getElementById('category-title');
+                            if (titleEl) {
+                                titleEl.textContent = a.textContent.trim();
+                                titleEl.style.display = '';
+                            }
+
+                            
+                            if (cat === 'Home') {
+                                
+                                hideInfoSections();
+                                toggleHero(true);
+                                showHome();
+                                showProducts();
+                                return;
+                            }
+                            if (cat === 'About') {
+                                
+                                setHomeMode(false);
+                                toggleHero(false);
+                                showOnlySection('about');
+                                hideProducts();
+                                return;
+                            }
+                            if (cat === 'Contact') {
+                                setHomeMode(false);
+                                toggleHero(false);
+                                showOnlySection('contacto');
+                                hideProducts();
+                                return;
+                            }
+
+                            
+                            hideInfoSections();
+                            setHomeMode(false);
+                            toggleHero(false);
+                            showCategory(cat);
+                            showProducts();
+                        });
+                    });
+
+                    
+                    const sideNav = document.getElementById('side-nav');
+                    if (sideNav){
+                        sideNav.innerHTML = '';
+                        const items = [
+                            { text: 'INICIO', action: () => { if (typeof showHome === 'function') { showHome(); } if (typeof showProducts === 'function') showProducts(); } },
+                            { text: 'QUIENES SOMOS', action: () => { if (typeof setHomeMode === 'function') setHomeMode(false); if (typeof toggleHero === 'function') toggleHero(false); if (typeof showOnlySection === 'function') showOnlySection('about'); if (typeof hideProducts === 'function') hideProducts(); } },
+                            { text: 'CONTACTANOS', action: () => { if (typeof setHomeMode === 'function') setHomeMode(false); if (typeof toggleHero === 'function') toggleHero(false); if (typeof showOnlySection === 'function') showOnlySection('contacto'); if (typeof hideProducts === 'function') hideProducts(); } },
+                            { text: 'MEDIOS DE PAGO', action: () => { if (typeof setHomeMode === 'function') setHomeMode(false); if (typeof toggleHero === 'function') toggleHero(false); if (typeof showOnlySection === 'function') showOnlySection('metodos'); if (typeof hideProducts === 'function') hideProducts(); } },
+                            { text: 'POLÍTICA DE PRIVACIDAD', action: () => { const footer = document.querySelector('.main-footer'); if (footer) footer.scrollIntoView({behavior:'smooth'}); } },
+                            { text: 'FAQ', action: () => { const footer = document.querySelector('.main-footer'); if (footer) footer.scrollIntoView({behavior:'smooth'}); } }
+                        ];
+
+                        items.forEach(it => {
+                            const btn = document.createElement('button');
+                            btn.type = 'button';
+                            btn.className = 'side-link';
+                            btn.textContent = it.text;
+                            btn.addEventListener('click', ()=>{
+                                try { it.action(); } catch(e){ console.error(e); }
+                                const side = document.getElementById('side-panel');
+                                const overlay = document.getElementById('side-overlay');
+                                if (side) side.classList.remove('open');
+                                if (side) side.setAttribute('aria-hidden','true');
+                                if (overlay) overlay.classList.remove('open');
+                            });
+                            sideNav.appendChild(btn);
+                        });
+                    }
+                }
+
+                  
+                document.addEventListener('DOMContentLoaded', ()=>{
+                    initNavFilters();
+                    
+                    fetchAllProducts().then(()=>{
+                       
+                        const titleEl = document.getElementById('category-title');
+                        if (titleEl) { titleEl.style.display = 'none'; titleEl.textContent = ''; }
+                      
+                        
+                        window.isHomeMode = true;
+                        if (typeof showProducts === 'function') showProducts();
+                        const colsInit = document.querySelectorAll('.featured-products .section-column');
+                        colsInit.forEach(c => c.style.display = '');
+                    });
+                });
+
+                    
+                    function showHome(){
+                        
+                        window.isHomeMode = true;
+                        const cols = document.querySelectorAll('.featured-products .section-column');
+                        cols.forEach(c => c.style.display = '');
+                    
+                        document.querySelectorAll('#nav-links a').forEach(a=>a.classList.remove('active'));
+                        document.querySelectorAll('#side-nav .side-link').forEach(b=>b.classList.remove('active'));
+                      
+                        const titleEl = document.getElementById('category-title'); if (titleEl) { titleEl.style.display = 'none'; titleEl.textContent = ''; }
+                       
+                        if (typeof loadProducts === 'function') loadProducts();
+                        if (typeof showProducts === 'function') showProducts();
+                    }
+
+                    
+                    document.addEventListener('DOMContentLoaded', ()=>{
+                        const hb = document.getElementById('home-btn');
+                        if (hb) hb.addEventListener('click', (e)=>{ e.preventDefault(); showHome(); });
+                        
+                        const sideNav = document.getElementById('side-nav');
+                        if (sideNav){
+                            const btn = document.createElement('button');
+                            btn.type = 'button'; btn.className = 'side-link'; btn.textContent = 'INICIO';
+                            btn.addEventListener('click', ()=>{ showHome(); const side = document.getElementById('side-panel'); const overlay = document.getElementById('side-overlay'); if (side) side.classList.remove('open'); if (overlay) overlay.classList.remove('open'); });
+                            sideNav.insertBefore(btn, sideNav.firstChild);
+                        }
+                       
+                        
+                    });
+            })();
+        </script>
+
+    <script>
+        
+        (function(){
+            const toggle = document.getElementById('nav-toggle');
+            const side = document.getElementById('side-panel');
+            const closeBtn = document.getElementById('side-close');
+            const overlay = document.getElementById('side-overlay');
+            if (!toggle || !side) return;
+
+            function setOpen(val){
+                
+                if (val && window.matchMedia('(max-width:600px)').matches) {
+                    
+                    toggle.setAttribute('aria-expanded', 'false');
+                    return;
+                }
+
+                toggle.setAttribute('aria-expanded', String(val));
+                if (val) {
+                    side.classList.add('open');
+                    side.setAttribute('aria-hidden','false');
+                    if (overlay) overlay.classList.add('open');
+                } else {
+                    side.classList.remove('open');
+                    side.setAttribute('aria-hidden','true');
+                    if (overlay) overlay.classList.remove('open');
+                }
+            }
+
+            toggle.addEventListener('click', ()=>{
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                setOpen(!expanded);
+                const navLinks = document.getElementById('nav-links');
+                if (navLinks) navLinks.classList.toggle('open');
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', ()=> setOpen(false));
+            if (overlay) overlay.addEventListener('click', ()=> setOpen(false));
+
+           
+            document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') setOpen(false); });
+        })();
+    </script>
+
+        <script>
+        
+        (function(){
+            
+        })();
+
+        
+        (function(){
+            
+        })();
+        
+        
+        
+    </script>
+
+    <script>
+        (function(){
+            
+            const hero = document.querySelector('.hero');
+            const header = document.querySelector('.main-header');
+            const nav = document.querySelector('.main-nav');
+            const footer = document.querySelector('.main-footer');
+
+            function setHeroHeight(){
+                if (!hero) return;
+                const headerH = header ? header.getBoundingClientRect().height : 0;
+                const navH = nav ? nav.getBoundingClientRect().height : 0;
+                const footerH = footer ? footer.getBoundingClientRect().height : 0;
+                const available = Math.max(220, window.innerHeight - headerH - navH - footerH);
+                hero.style.minHeight = available + 'px';
+                
+                const mainEl = document.querySelector('main');
+                if (mainEl) {
+                    if (hero.style.display === 'none') mainEl.style.minHeight = available + 'px';
+                    else mainEl.style.minHeight = '';
+                }
+            }
+
+            window.addEventListener('resize', setHeroHeight);
+            window.addEventListener('load', setHeroHeight);
+            document.addEventListener('DOMContentLoaded', setHeroHeight);
+
+            
+            const obs = new MutationObserver(setHeroHeight);
+            if (header) obs.observe(header, { attributes: true, childList: true, subtree: true });
+            if (nav) obs.observe(nav, { attributes: true, childList: true, subtree: true });
+            if (footer) obs.observe(footer, { attributes: true, childList: true, subtree: true });
+        })();
+    </script>
+
+    <script>
+    (function(){
+        const el = document.getElementById('footer-copy');
+        if (!el) return;
+        function updateCopy(){
+            const year = new Date().getFullYear();
+            if (window.matchMedia('(max-width:600px)').matches){
+                el.textContent = `© ${year} Supermercado Las Cuatro Milpas.`;
+            } else {
+                el.textContent = `© ${year} Supermercado Las Cuatro Milpas. Todos los derechos reservados.`;
+            }
+        }
+        updateCopy();
+        
+        window.addEventListener('resize', updateCopy);
+        const mq = window.matchMedia('(max-width:600px)');
+        if (mq.addEventListener) mq.addEventListener('change', updateCopy);
+        else if (mq.addListener) mq.addListener(updateCopy);
+    })();
+    </script>
+
+    <script>
+    
+    (function(){
+        function cleanContainer(container){
+            Array.from(container.childNodes).forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    if ((node.textContent || '').trim() === '+' || (node.textContent || '').trim() === '✚') {
+                        node.parentNode.removeChild(node);
+                    }
+                }
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const txt = (node.textContent || '').trim();
+                    if (txt === '+' || txt === '✚') node.remove();
+                }
+            });
+            container.querySelectorAll('.plus, .decor, .decorative, .cross').forEach(el=>el.remove());
+        }
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const containers = document.querySelectorAll('.contact-social .social-icons');
+            containers.forEach(container => {
+                cleanContainer(container);
+
+                
+                const mo = new MutationObserver(muts => {
+                    muts.forEach(m => {
+                        m.addedNodes && m.addedNodes.forEach(n => {
+                            try { if (n.nodeType === Node.TEXT_NODE && (n.textContent||'').trim() === '+') n.parentNode.removeChild(n); }
+                            catch(e){}
+                            try { if (n.nodeType === Node.ELEMENT_NODE) cleanContainer(container); }
+                            catch(e){}
+                        });
+                    });
+                });
+                mo.observe(container, { childList: true, subtree: true });
+            });
+        });
+    })();
+    </script>
+
+</body>
+</html>
