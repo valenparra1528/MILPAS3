@@ -27,3 +27,6 @@ logs/
 
 # Banners folder (if images large)
 pagina/banners/
+
+# Backup folder used during repo initialization
+.git_backups/
